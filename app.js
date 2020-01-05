@@ -1,6 +1,7 @@
 const request = require("request");
 const geocode = require("./geocode.js");
 const forecast = require("./forecast");
+const location = process.argv[2];
 
 //Using callback functions
 
@@ -21,4 +22,4 @@ const weatherInfo = address => {
   });
 };
 
-weatherInfo("Chennai");
+weatherInfo(location);
