@@ -22,4 +22,8 @@ const weatherInfo = address => {
   });
 };
 
-weatherInfo(location);
+if (!location) {
+  console.log("Please provide an address.");
+} else {
+  weatherInfo(location);
+}
