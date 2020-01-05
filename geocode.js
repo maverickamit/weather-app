@@ -1,5 +1,7 @@
 const request = require("request");
 
+// Returning latitude and longitude of a place
+
 const geocode = (address, callback) => {
   const geocodeUrl =
     "https://api.mapbox.com/geocoding/v5/mapbox.places/" +
@@ -15,10 +17,11 @@ const geocode = (address, callback) => {
       callback("The given location doesn't exist");
     } else {
       const geoData = response.body.features[0];
-      callback(
-        undefined,
-        `${geoData.place_name} \nLongitude ${geoData.center[0]} \nLatitude ${geoData.center[1]}`
-      );
+      callback(undefined, {
+        latitude: geoData.center[1],
+        longitude: geoData.center[0],
+        location: geoData.place_name
+      });
       // weatherInfo(weatherUrl);
     }
   });

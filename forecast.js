@@ -1,5 +1,7 @@
 const request = require("request");
 
+//Returning weather info for given input of latitude and longitude
+
 const forecast = (latitude, longitude, callback) => {
   const weatherUrl =
     "https://api.darksky.net/forecast/16c76dbed11f350b6b9a6946681648b9/" +
